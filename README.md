@@ -1363,26 +1363,26 @@ This project demonstrates practical experience in:
 
 **Design decisions and Challenges**
 **Design decisions**
-*Address encoding for control register,tx_reg,rx_reg,status reg
-*SCLK generations from main PCLK
-*Including all  4 SPI modes in SPI design
-*Detecting Posedge and negedge for sampling and shifting
-*Seperate FSM to differentaite each transfer
-*Used fifo and buffer to temporarily store the data
+-Address encoding for control register,tx_reg,rx_reg,status reg
+-SCLK generations from main PCLK
+-Including all  4 SPI modes in SPI design
+-Detecting Posedge and negedge for sampling and shifting
+-Seperate FSM to differentaite each transfer
+-Used fifo and buffer to temporarily store the data
 
 **Design Challenges**
-*While designig all 4 modes into the SPI master module,occur multi driven ports,because of based on the CPOL and CPHA edge may vary from one mode to another mode
-*Logic for posedge and negedge  detection
-*Loss of data,because of APB is faster than SPI,while doing SPI transfer APB can do another operation.So used fifo to avoid data loss
-*Control_reg data may changes for every transfer
+-While designig all 4 modes into the SPI master module,occur multi driven ports,because of based on the CPOL and CPHA edge may vary from one mode to another mode
+-Logic for 'posedge' and 'negedge'  detection
+-Loss of data,because of APB is faster than SPI,while doing SPI transfer APB can do another operation.So used fifo to avoid data loss
+-'Control_reg' data may changes for every transfer
 
 **Debug challenges**
-*Checking CPOL and CPHA continuously to monitor shifting and sampling
-*Checked whether data is shifting and sample on correct edge or not
-*Monitored the empty and full condition of fifo
-*Monitoring miso and mosi ports whether data is transfering according to the data or not
-*Input and output data both or same or not
-*Do signals are asserting according to the FSM states
+-Checking CPOL and CPHA continuously to monitor shifting and sampling
+-Checked whether data is shifting and sample on correct edge or not
+-Monitored the empty and full condition of fifo
+-Monitoring miso and mosi ports whether data is transfering according to the data or not
+-Input and output data both or same or not
+-Do signals are asserting according to the FSM states
 
 
 # 37. Conclusion
