@@ -1361,7 +1361,7 @@ This project demonstrates practical experience in:
 
 ---
 
-**Design decisions and Challenges**
+###Design decisions and Challenges
 **Design decisions**
 -Address encoding for control register,tx_reg,rx_reg,status reg
 -SCLK generations from main PCLK
