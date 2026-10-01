@@ -1388,8 +1388,18 @@ This project demonstrates practical experience in:
 - Verified whether transmitted input data and received output data match
 - Checked that signals assert correctly according to the intended FSM states
 
+## 37. Simulation Output Waveforms
+<img width="1457" height="668" alt="Screenshot 2026-10-01 at 5 56 52 PM" src="https://github.com/user-attachments/assets/4739ac7d-75ee-40da-84db-65dcf1eb915f" />
 
-# 37. Conclusion
+<img width="1450" height="747" alt="Screenshot 2026-10-01 at 5 57 16 PM" src="https://github.com/user-attachments/assets/0ec39b71-6758-4b02-b593-23f288c1665d" />
+
+<img width="1455" height="741" alt="Screenshot 2026-10-01 at 5 57 35 PM" src="https://github.com/user-attachments/assets/3571eea0-7d63-4a22-b4d3-f15c4c9bae45" />
+
+
+
+
+
+# 38. Conclusion
 
 The APB-to-SPI Bridge demonstrates how a processor-facing APB interface can be integrated with an external SPI communication interface using a modular RTL architecture.
 
