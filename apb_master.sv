@@ -1,6 +1,5 @@
 //APB master verilog code
 
-// Code your design here
 module apb_master(
     input         pclk,
     input         prst,
