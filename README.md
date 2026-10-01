@@ -1361,28 +1361,32 @@ This project demonstrates practical experience in:
 
 ---
 
-###Design decisions and Challenges
-**Design decisions**
--Address encoding for control register,tx_reg,rx_reg,status reg
--SCLK generations from main PCLK
--Including all  4 SPI modes in SPI design
--Detecting Posedge and negedge for sampling and shifting
--Seperate FSM to differentaite each transfer
--Used fifo and buffer to temporarily store the data
+### Design Decisions and Challenges
+
+**Design Decisions**
+
+- Address encoding for `CONTROL_REG`, `TX_REG`, `RX_REG`, and `STATUS_REG`
+- `SCLK` generation from the main `PCLK`
+- Including all 4 SPI modes in the SPI design
+- Detecting posedge and negedge for sampling and shifting
+- Separate FSMs to differentiate each transfer
+- Used FIFO and buffer to temporarily store and stage data
 
 **Design Challenges**
--While designig all 4 modes into the SPI master module,occur multi driven ports,because of based on the CPOL and CPHA edge may vary from one mode to another mode
--Logic for 'posedge' and 'negedge'  detection
--Loss of data,because of APB is faster than SPI,while doing SPI transfer APB can do another operation.So used fifo to avoid data loss
--'Control_reg' data may changes for every transfer
 
-**Debug challenges**
--Checking CPOL and CPHA continuously to monitor shifting and sampling
--Checked whether data is shifting and sample on correct edge or not
--Monitored the empty and full condition of fifo
--Monitoring miso and mosi ports whether data is transfering according to the data or not
--Input and output data both or same or not
--Do signals are asserting according to the FSM states
+- While designing all 4 modes into the SPI master module, resolved multi-driven port conflicts caused by differing sampling and shifting edges across CPOL and CPHA modes
+- Logic for `posedge` and `negedge` detection
+- Mitigating data loss: APB operates faster than SPI, allowing new APB transfers while SPI is busy; integrated a FIFO to prevent data loss
+- `CONTROL_REG` configuration data can change dynamically across transfers
+
+**Debug Challenges**
+
+- Monitoring CPOL and CPHA continuously to verify shifting and sampling behavior
+- Checked whether data shifts and samples on the correct edge for all 4 modes
+- Monitored the empty and full conditions of the FIFO
+- Monitored MISO and MOSI lines to verify serial bit-stream transmission matches expected data
+- Verified whether transmitted input data and received output data match
+- Checked that signals assert correctly according to the intended FSM states
 
 
 # 37. Conclusion
